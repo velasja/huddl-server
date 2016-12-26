@@ -26,7 +26,7 @@ router.get('/', function(req, res) {
     });
 });
 
-router.route('/meetup/:sports').get(function(req,res) {
+router.route('/meetup/:url').get(function(req,res) {
     var query = "https://api.meetup.com/" + req.params.url + "/events?photo-host=public&page=20&sig_id=197582927&sig=c5891d6697925adbf58ab4a075bc32672b023231&key=77b21577617574d425111110460";
     requestify.get(query).then(function(response) {
         var data = (response.getBody());
