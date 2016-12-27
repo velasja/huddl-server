@@ -1,17 +1,20 @@
 {
-  "name": "javascript",
+  "name": "huddl-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "javascript.js",
-  "dependencies": {
-    "express": "^4.14.0"
-  },
-  "devDependencies": {},
+  "description": "Web server for hosting Meetup API requests",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velasja/huddl-server.git"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/velasja/huddl-server/issues"
+  },
+  "homepage": "https://github.com/velasja/huddl-server#readme"
 }
