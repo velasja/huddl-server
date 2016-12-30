@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/velasja/huddl-server/issues"
   },
-  "homepage": "https://github.com/velasja/huddl-server#readme"
+  "homepage": "https://github.com/velasja/huddl-server#readme",
+  "dependencies": {
+    "3000": "^6.9.1",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "http-server": "^0.9.0",
+    "requestify": "^0.2.5"
+  },
+  "devDependencies": {},
+  "keywords": []
 }
