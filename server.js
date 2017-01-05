@@ -36,18 +36,18 @@ router.route('/meetup/:url').get(function(req,res) {
     })
 })
 
-router.route('/meetup/:url').get(function(req,res) {
-    var query = "https://api.meetup.com/" + req.params.url + "/events?photo-host=public&page=20&sig_id=197582927&sig=c5891d6697925adbf58ab4a075bc32672b023231&key=77b21577617574d425111110460";
+router.route('/meetup/:sports').get(function(req,res) {
+    var query = "http://api.meetup.com/2/groups?&sign=true&photo-host=public&topic="+req.params.sports +"&lat=30.267153&lon=-97.74306079999997&key=77b21577617574d425111110460";
     requestify.get(query).then(function(response) {
         var data = (response.getBody());
         res.json({
-            events: data
+            groups: data
         })
     })
 })
 
 router.route('/meetup/:zip').get(function(req,res) {
-    var query = "https://api.meetup.com/2/groups?&sign=true&photo-host=public&topic=nflfootball&zip=" + req.params.zip + "&page=50&key=77b21577617574d425111110460";
+    var query = "http://api.meetup.com/2/groups?&sign=true&photo-host=public&topic=nflfootball&zip="+req.params.zip+"&page=50&key=77b21577617574d425111110460";
     requestify.get(query).then(function(response) {
         var data = (response.getBody());
         res.json({
