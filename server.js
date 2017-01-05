@@ -47,7 +47,7 @@ router.route('/meetup/:url').get(function(req,res) {
 })
 
 router.route('/meetup/:zip').get(function(req,res) {
-    var query = "https://api.meetup.com/2/groups?zip=" + req.params.zip + "&offset=0&format=json&lon=-95.2200012207&topic=nflfootball&photo-host=public&page=20&radius=25.0&fields=&lat=29.7199993134&order=id&desc=false&sig_id=197582927&sig=87e59495616ddad8bb0a76da7a8610b6ddec0f44&key=77b21577617574d425111110460";
+    var query = "https://api.meetup.com/2/groups?&sign=true&photo-host=public&topic=nflfootball&zip=" + req.params.zip + "&page=50&key=77b21577617574d425111110460";
     requestify.get(query).then(function(response) {
         var data = (response.getBody());
         res.json({
