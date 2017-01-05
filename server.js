@@ -36,6 +36,26 @@ router.route('/meetup/:url').get(function(req,res) {
     })
 })
 
+router.route('/meetup/:url').get(function(req,res) {
+    var query = "https://api.meetup.com/" + req.params.url + "/events?photo-host=public&page=20&sig_id=197582927&sig=c5891d6697925adbf58ab4a075bc32672b023231&key=77b21577617574d425111110460";
+    requestify.get(query).then(function(response) {
+        var data = (response.getBody());
+        res.json({
+            events: data
+        })
+    })
+})
+
+router.route('/meetup/:zip').get(function(req,res) {
+    var query = "https://api.meetup.com/2/groups?zip=" + req.params.zip + "&offset=0&format=json&lon=-95.2200012207&topic=nflfootball&photo-host=public&page=20&radius=25.0&fields=&lat=29.7199993134&order=id&desc=false&sig_id=197582927&sig=87e59495616ddad8bb0a76da7a8610b6ddec0f44&key=77b21577617574d425111110460";
+    requestify.get(query).then(function(response) {
+        var data = (response.getBody());
+        res.json({
+            groups: data
+        })
+    })
+})
+
 app.all('/*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
