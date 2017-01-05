@@ -32,9 +32,9 @@ router.route('/meetup/:url').get(function(req,res) {
         var data = (response.getBody());
         res.json({
             events: data
-        })
-    })
-})
+        });
+    });
+});
 
 router.route('/meetup/:sports').get(function(req,res) {
     var query = "http://api.meetup.com/2/groups?&sign=true&photo-host=public&topic="+req.params.sports +"&lat=30.267153&lon=-97.74306079999997&key=77b21577617574d425111110460";
@@ -42,9 +42,9 @@ router.route('/meetup/:sports').get(function(req,res) {
         var data = (response.getBody());
         res.json({
             groups: data
-        })
-    })
-})
+        });
+    });
+});
 
 router.route('/meetup/:zip').get(function(req,res) {
     var query = "http://api.meetup.com/2/groups?&sign=true&photo-host=public&topic=nflfootball&zip="+req.params.zip+"&page=50&key=77b21577617574d425111110460";
@@ -52,9 +52,9 @@ router.route('/meetup/:zip').get(function(req,res) {
         var data = (response.getBody());
         res.json({
             groups: data
-        })
-    })
-})
+        });
+    });
+});
 
 app.all('/*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
