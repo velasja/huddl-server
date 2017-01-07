@@ -37,7 +37,7 @@ router.get('/', function(req, res) {
 // });
 
 router.route('/mgroups/:sports').get(function(req,res) {
-    var query = "http://api.meetup.com/2/groups?&sign=true&photo-host=public&topic="+req.params.sports +"&lat=30.267153&lon=-97.74306079999997&key=77b21577617574d425111110460";
+    var query = "https://api.meetup.com/2/groups?&sign=true&photo-host=public&topic="+req.params.sports +"&lat=30.267153&lon=-97.74306079999997&key=77b21577617574d425111110460";
     requestify.get(query).then(function(response) {
         var data = (response.getBody());
         res.json({
